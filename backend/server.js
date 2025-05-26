@@ -16,10 +16,6 @@ app.use(cors({
 
 app.use("/",authRouter);
 
-app.get("/commerce",(req,res)=>{
-      res.send("hello world");
-})
-
 
 const PORT = process.env.PORT || 4000
 

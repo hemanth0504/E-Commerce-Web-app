@@ -60,7 +60,7 @@ router.post("/api/auth/register", async (req,res)=>{
           {
             throw new Error("user cannot be found");
           }
-          const matchedPassword = await bcrypt.compareSync(password,findUser.password);
+          const matchedPassword = bcrypt.compareSync(password,findUser.password);
 
           if(!matchedPassword)
           {
@@ -89,7 +89,7 @@ router.post("/api/auth/register", async (req,res)=>{
     })
 
 
-    router.post("/api/auth/profile",requireAuth, async (req,res)=>{
+    router.get("/api/auth/profile",requireAuth, async (req,res)=>{
 
         try{
            
@@ -110,6 +110,25 @@ router.post("/api/auth/register", async (req,res)=>{
 
 
     })
+
+
+    router.post("/api/auth/logout",requireAuth, async (req,res)=>{
+
+      try{
+
+
+
+         
+   
+  } catch(err)
+  {
+    return res.status(400).send({msg:err.message});
+  }
+
+
+
+  })
+
 
 
 
