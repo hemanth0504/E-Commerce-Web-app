@@ -4,6 +4,7 @@ import cors from "cors";
 import dbConnect from "./config/db.js"; 
 import authRouter from "./routes/auth.js"
 
+
 dotenv.config();
 
 const app = express();
@@ -13,8 +14,9 @@ app.use(cors({
   credentials: true              
 }));
 
+app.use("/",authRouter);
 
-app.get("/",(req,res)=>{
+app.get("/commerce",(req,res)=>{
       res.send("hello world");
 })
 
