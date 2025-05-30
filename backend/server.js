@@ -17,8 +17,8 @@ app.use(cors({
 app.use("/",authRouter);
 
 
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT || 3000
 
 app.listen(PORT,()=>{
-      console.log("server is starting on 4000")
+      console.log("server is starting on 3000")
 })

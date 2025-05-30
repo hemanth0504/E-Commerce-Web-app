@@ -38,12 +38,13 @@ router.post("/api/auth/register", async (req,res)=>{
     }
     catch(err){
 
-        return res.status(400).send({msg : err});
+        return res.status(400).send({msg : err.message});
 
     }
   })
 
     router.post("/api/auth/login", async (req,res)=>{
+      console.log("Login body:", req.body);
 
       const {email,password} = req.body;
   
