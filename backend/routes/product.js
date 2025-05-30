@@ -1,6 +1,7 @@
 import express from "express"
-import requireAuth from "../middleware/RequireAuth";
-import Product from "../models/Product";
+import requireAuth from "../middleware/RequireAuth.js";
+import Product from "../models/Product.js";
+import requireAdmin from "../middleware/RequireAdmin.js";
 
 
 
@@ -41,9 +42,13 @@ router.post("/api/products",requireAuth,requireAdmin, async (req,res)=>{
   }
   catch(err)
   {
+     console.error("Error posting product:", err);
    return   res.status(400).send("Couldn't post the data");
   }
      
 
 
 })
+
+
+export default router;

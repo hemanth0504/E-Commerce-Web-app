@@ -1,4 +1,4 @@
-import User from "../models/User"
+import User from "../models/User.js"
 const requireAdmin = async (req,res,next)=>{
 
   if(!req.user)
@@ -7,7 +7,8 @@ const requireAdmin = async (req,res,next)=>{
   }
 
  try {
-    const user = await User.findById(req.user._id);
+    const user = await User.findById(req.user.userId);
+    console.log(user.role);
     if (!user || user.role !== "admin") {
       return res.status(403).send({ msg: "You do not have access to add products" });
     }

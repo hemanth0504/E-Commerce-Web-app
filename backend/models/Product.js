@@ -5,7 +5,7 @@ const ProductSchema = new mongoose.Schema({
 
       _id:{
         type: mongoose.Schema.Types.ObjectId,
-        default : ()=> new mongoose.Schema.Types.ObjectId()
+        default : ()=> new mongoose.Types.ObjectId()
       },
        name : {
             type : mongoose.Schema.Types.String,
@@ -16,7 +16,7 @@ const ProductSchema = new mongoose.Schema({
               required: true
             },
         price : {
-          type: mongoose.Schema.Types.Int32,
+          type: mongoose.Schema.Types.Number,
           required: true
         },
         image: 
